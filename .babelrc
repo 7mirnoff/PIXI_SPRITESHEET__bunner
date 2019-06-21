@@ -1,0 +1,9 @@
+{
+  "presets": [
+    ["env", {
+      "targets": {
+        "browsers": ["Android >= 4", "ChromeAndroid >= 38", "iOS >= 6", "ExplorerMobile >= 9"]
+      }
+    }]
+  ]
+}
