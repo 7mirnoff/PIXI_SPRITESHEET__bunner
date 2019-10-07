@@ -134,6 +134,8 @@ window.onload = function () {
       }
     }
     animationCoin.play()
+    const duration = 500
+    const easing = `easeInOutSine`
 
     const doLoop = () => {
       var tl = anime.timeline({
@@ -143,36 +145,36 @@ window.onload = function () {
       tl.add({
         targets: `.stage-1`,
         opacity: [0, 1],
-        duration: 500,
-        easing: `easeInOutSine`
+        duration,
+        easing
       }).add({
         targets: `.title-text__text--rus`,
         opacity: [1, 0],
-        duration: 500,
-        easing: `easeInOutSine`,
+        duration,
+        easing,
         delay: 1500
       }).add({
         targets: `.title-text__text--ch`,
         opacity: [0, 1],
-        duration: 500,
-        easing: `easeInOutSine`
+        duration,
+        easing
       }).add({
         targets: `.stage-1`,
         opacity: [1, 0],
-        duration: 500,
-        easing: `easeInOutSine`,
+        duration,
+        easing,
         delay: 1900
       }).add({
         targets: `.stage-2`,
         opacity: [0, 1],
-        duration: 500,
-        easing: `easeInOutSine`
+        duration,
+        easing
       }).add({
         targets: `.stage-2`,
         opacity: [1, 0],
         duration: 700,
         delay: 2100,
-        easing: `easeInOutSine`,
+        easing,
         complete: function (anim) {
           doLoop()
           countLoop = 0
