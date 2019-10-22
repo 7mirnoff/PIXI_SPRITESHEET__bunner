@@ -10,7 +10,6 @@ window.onload = function () {
 
   function getFile(fileName, is) {
     var request = new XMLHttpRequest()
-    request.open('GET', fileName)
     request.onloadend = function () {
       if (is) {
         planeJson = parse(request.responseText)
@@ -18,7 +17,7 @@ window.onload = function () {
         coinJson = parse(request.responseText)
       }
     }
-
+    request.open(`GET`, fileName)
     request.send()
   }
 
@@ -26,7 +25,7 @@ window.onload = function () {
   getFile('assets/spritesheetcoin.json', false)
 
   function parse(obj) {
-    return JSON.parse(obj);
+    return JSON.parse(obj)
   }
 
   const loadSpritesheets = () => {
@@ -110,9 +109,7 @@ window.onload = function () {
 
     setSizeScene()
 
-    window.addEventListener(`resize`, () => {
-      setSizeScene()
-    })
+    window.addEventListener(`resize`, setSizeScene)
 
     app.stage.addChild(animationPlane)
     animationPlane.animationSpeed = 0.4
